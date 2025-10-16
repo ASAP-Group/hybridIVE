@@ -132,7 +132,7 @@ If you use this code in your research, please cite:
 ```bibtex
 @misc{hybridive,
   title={From Informed Independent Vector Extraction to Hybrid Architectures for Target Source Extraction},
-  author={Zbynek Koldovsky, Jirı Male∗, Martin Vratny, Tereza Vrbova, Jaroslav Cmejla, and Stephen O’Regan},
+  author={Zbynek Koldovsky, Jirı Malek, Martin Vratny, Tereza Vrbova, Jaroslav Cmejla, and Stephen O’Regan},
   year={2025},
   url={https://github.com/ASAP-Group/hybridIVE}
 }
