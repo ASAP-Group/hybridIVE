@@ -7,7 +7,7 @@ Hybrid Architectures for Target Source Extraction".
 ## Project Structure
 
 ```
-HSE_ainfo/
+hybridIVE/
 ├── .vscode
 │   └── launch.json                                             # VScode examples of usage
 ├── IFIVAModule.py                                              # Standalone iFIVA implementation module
@@ -130,11 +130,11 @@ TBD
 If you use this code in your research, please cite:
 
 ```bibtex
-@misc{hse_ainfo,
-  title={HSE Audio Information: Neural Network Enhanced Audio Source Separation},
-  author={[Author names]},
+@misc{hybridive,
+  title={From Informed Independent Vector Extraction to Hybrid Architectures for Target Source Extraction},
+  author={Zbynek Koldovsky, Jirı Male∗, Martin Vratny, Tereza Vrbova, Jaroslav Cmejla, and Stephen O’Regan},
   year={2025},
-  url={https://github.com/ASAP-Group/HSE_ainfo}
+  url={https://github.com/ASAP-Group/hybridIVE}
 }
 ```
 
