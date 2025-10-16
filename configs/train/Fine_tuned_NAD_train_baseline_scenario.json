@@ -1,0 +1,80 @@
+{
+    "name": "Fine tuned NAD baseline scenario",
+    "version": "Fine_tuned_NAD_base",
+    "description": "This is a training configuration for fine-tuned NAD on a baseline scenario",
+    "mode": "HSE4_joint2",
+    "seed": 42,
+    "paths": {
+        "train_path": "[PATH_TO_TRAINING_DATA_FILES]",
+        "train_rellist": "[PATH_TO_TRAINING_DATA_LIST_FILE]",
+        "valid_path": "[PATH_TO_VALIDATION_DATA_FILES]",
+        "valid_rellist": "[PATH_TO_VALIDATION_DATA_LIST_FILE]",
+        "odir_logs": "[PATH_TO_OUTPUT_LOGS_DIRECTORY]",
+        "fe_path": "[PATH_TO_FEATURE_EXTRACTOR_CHECKPOINT]",
+        "hse_path": ""
+    },
+    "train": {
+        "epochs": 100,
+        "lr": 3e-4,
+        "weight_decay": 1e-3,
+        "optimizer": "adamw",
+        "batch_train": 10,
+        "batch_valid": 10,
+        "stopping_delta": 1e-3,
+        "stopping_patience": 13,
+        "val_check_interval": 1.0,
+        "sch_factor": 0.25,
+        "sch_patience": 5,
+        "grad_clip": 1e-1,
+        "grad_accum_batch": 2,
+        "log_every_n_steps": 20,
+        "SNR": -10,
+        "eps": 1e-8
+    },
+    "dataset": {
+        "batchsize": 600,
+        "contextview": 7,
+        "windowlength": 200,
+        "use_lambda": false,
+        "add_noise": true,
+        "snr_range": [26.8727, 26.8727],
+        "nfft": 512,
+        "fft_shift": 128 
+    },
+    "model": {
+        "min_aux": 1e-3,
+        "numit": 5,
+        "conv_pars": {
+            "layer_num": 4,
+            "in_ch_num": [6,12,24,48],
+            "out_ch_num": [12,24,48,4],
+            "kern_frm_cont": [3,3,3,3],
+            "kern_frq_cont": [7,5,3,3],
+            "requires_grad": [true,true,true,true]
+        },
+        "pos_enc_pars": {
+            "max_seq_len": 64,
+            "dim": 64
+        },
+        "mha_pars": {
+            "embed_dim": 64,
+            "num_heads": 8,
+            "dim_feedforward": 128,
+            "dropout": 0.1,
+            "batch_first": true,
+            "requires_grad": true,
+            "attention_projection": {
+                "enable": true,
+                "input_dim": 64,
+                "output_dim": 1,
+                "requires_grad": true
+            }
+        },
+        "lin_pars": {
+            "layer_num": 1,
+            "isize": [64],
+            "osize": [1],
+            "requires_grad": [true]
+        }        
+    }
+}

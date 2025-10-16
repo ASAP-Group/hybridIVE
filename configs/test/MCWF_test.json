@@ -1,0 +1,25 @@
+{
+    "test":{
+        "description": "classic test - MCWF (Multi-channel Wiener filter)",
+        "nfft": 512,
+        "ffthop": 128,
+        "fs": 16000
+    },
+    "paths": {
+        "test_path": "[PATH_TO_TEST_DATA_FILES]",
+        "test_rellist": "[PATH_TO_TEST_DATA_LIST_FILE]",
+        "odir_path": "[PATH_TO_OUTPUT_RESULTS_DIRECTORY]",
+        "odir_name": "[NAME_OF_RESULT_FILE]"
+
+    },
+    "bss_eval": true,
+    "show_improvements": false,
+    "eval_extended": true,
+    "eval_extended_params": {
+        "nfft": 512,
+        "hop_length": 128,
+        "window_name": "hamming",
+        "chan_ref": 0,
+        "fs": 16000
+    }
+}

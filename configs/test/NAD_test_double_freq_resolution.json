@@ -1,0 +1,24 @@
+{
+    "test":{
+        "description": "NAD test - double frequency resolution",
+        "test_numit": 5
+    },
+    "paths": {
+        "test_path": "[PATH_TO_TEST_DATA_FILES]",
+        "test_rellist": "[PATH_TO_TEST_DATA_LIST_FILE]",
+        "odir_path": "[PATH_TO_OUTPUT_RESULTS_DIRECTORY]",
+        "odir_name": "[NAME_OF_RESULT_FILE]"
+    },
+    "checkpoint": {
+        "chck_path": "[PATH_TO_MODEL_CHECKPOINT_FILE]",
+        "config_train_path": "[PATH_TO_TRAINING_CONFIG_FILE]"
+    },
+    "eval_extended": true,
+    "eval_extended_params": {
+        "nfft": 1024,
+        "hop_length": 128,
+        "window_name": "hamming",
+        "chan_ref": 0,
+        "fs": 16000
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "name": "NAD Double frequency resolution",
+    "version": "NAD_base",
+    "description": "This is a training configuration for NAD with Double frequency resolution",
+    "mode": "HSEfe4_nad3",
+    "seed": 42,
+    "paths": {
+        "train_path": "[PATH_TO_TRAINING_DATA_FILES]",
+        "train_rellist": "[PATH_TO_TRAINING_DATA_LIST_FILE]",
+        "valid_path": "[PATH_TO_VALIDATION_DATA_FILES]",
+        "valid_rellist": "[PATH_TO_VALIDATION_DATA_LIST_FILE]",
+        "odir_logs": "[PATH_TO_OUTPUT_LOGS_DIRECTORY]"
+    },
+    "train": {
+        "epochs": 20,
+        "lr": 3e-4,
+        "weight_decay": 1e-3,
+        "optimizer": "adamw",
+        "batch_train": 50,
+        "batch_valid": 50,
+        "stopping_delta": 0.0,
+        "stopping_patience": 7,
+        "val_check_interval": 1.0,
+        "sch_factor": 0.25,
+        "sch_patience": 1,
+        "SNR": -10,
+        "eps": 1e-8
+    },
+    "dataset": {
+        "batchsize": 600,
+        "contextview": 7,
+        "windowlength": 200,
+        "use_lambda": false,
+        "add_noise": true,
+        "snr_range": [26.8727, 26.8727],
+        "nfft": 1024,
+        "fft_shift": 128 
+    },
+    "model": {
+        "min_aux": 1e-3,
+        "numit": 5,
+        "conv_pars": {
+            "layer_num": 5,
+            "in_ch_num": [6,12,24,48,48],
+            "out_ch_num": [12,24,48,48,4],
+            "kern_frm_cont": [3,3,3,3,3],
+            "kern_frq_cont": [13,7,5,3,3],
+            "requires_grad": [true,true,true,true,true]
+        },
+        "pos_enc_pars": {
+            "max_seq_len": 64,
+            "dim": 64
+        },
+        "mha_pars": {
+            "embed_dim": 64,
+            "num_heads": 8,
+            "dim_feedforward": 128,
+            "dropout": 0.1,
+            "batch_first": true,
+            "requires_grad": true,
+            "attention_projection": {
+                "enable": true,
+                "input_dim": 64,
+                "output_dim": 1,
+                "requires_grad": true
+            }
+        },
+        "lin_pars": {
+            "layer_num": 1,
+            "isize": [64],
+            "osize": [1],
+            "requires_grad": [true]
+        }        
+    }
+}
