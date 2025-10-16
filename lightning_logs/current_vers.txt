@@ -1,3 +1,0 @@
-hse4c_jm5 - default version, either in nfft=512 or 1024 variant, no augmentation
-hse4c_jm6 - default version, either in nfft=512 or 1024 variant
-hse4c_jm7 - default version + postfilter
