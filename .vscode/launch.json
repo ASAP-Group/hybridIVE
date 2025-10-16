@@ -1,0 +1,100 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: HSEfe4_nad3 - test blind",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/rfc_tests.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--mode",
+                "HSEfe4_nad3_blind",
+                "--config",
+                "configs/test/NAD_test_baseline_scenario.json"
+            ]
+        },
+        {
+            "name": "Python Debugger: HSEfe4_nad3 - test oracle",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/rfc_tests.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--mode",
+                "HSEfe4_nad3_oracle",
+                "--config",
+                "configs/test/NAD_test_baseline_scenario.json"
+            ]
+        },
+        {
+            "name": "Python Debugger: MCWF test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/rfc_tests.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--mode",
+                "MCWF",
+                "--config",
+                "configs/test/MCWF_test.json"
+            ]
+        },
+        {
+            "name": "Python Debugger: HSEfe4_nad3 - test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/rfc_tests.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--mode",
+                "HSEfe4_nad3",
+                "--config",
+                "configs/test/NAD_test_baseline_scenario.json"
+            ]
+        },
+        {
+            "name": "Python Debugger: HSE4_joint2 - test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/rfc_tests.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--mode",
+                "HSE4_joint2",
+                "--config",
+                "configs/test/Fine_tuned_NAD_test_baseline_scenario.json"
+            ]
+        },
+        {
+            "name": "Python Debugger: HSE4 - train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/rfc_train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--config",
+                "configs/train/Fine_tuned_NAD_train_baseline_scenario.json"
+            ]
+        },
+        {
+            "name": "Python Debugger: HSEfe4 - train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/rfc_train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--config",
+                "configs/train/NAD_train_baseline_scenario.json"
+            ]
+        },
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "${command:pickArgs}"
+        },
+    ]
+}
