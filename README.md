@@ -1,4 +1,4 @@
-# From Informed Independent Vector Extraction to Hybrid Architectures for Target Source Extraction
+# Hybrid Architectures for Target Source Extraction
 
 This repository implements techniques published in paper "From Informed Independent Vector Extraction to
 Hybrid Architectures for Target Source Extraction" (DOI 10.1109/OJSP.2026.3657698) and allows replication of experiments presended there.
